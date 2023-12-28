@@ -1,24 +1,29 @@
 const getState = ({ getStore, getActions, setStore }) => {
-	//const url = "https://pokeapi.co/api/v2/pokemon/";
 	return {
 		store: {
 			pokemons: [],
 			pokemon: {}
 		},
 		actions: {
-			getPokemons: async (id) => {
+			// Cambiamos el nombre de la función y le permitimos recibir un rango de Pokémon
+			getPokemonsRange: async (startId, endId) => {
 				try {
-					const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/1`);
-					const data = await resp.json();
-					console.log("data", data)
+					const promises = [];
+					for (let id = startId; id <= endId; id++) {
+						// Creamos un array de promesas para realizar las solicitudes de manera concurrente
+						promises.push(fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(resp => resp.json()));
+					}
 
-					setStore({ pokemons: data });
+					// Esperamos a que todas las promesas se resuelvan
+					const pokemonsData = await Promise.all(promises);
+
+					setStore({ pokemons: pokemonsData });
 				} catch (error) {
 					console.log("Error al obtener los Pokémon", error);
 				}
 			}
 		}
-	}
+	};
 };
 
 export default getState;

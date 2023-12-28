@@ -3,29 +3,32 @@ import { Context } from "../store/appContext";
 const url_img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/";
 
 export const CardPokemon = () => {
-    const { store, actions } = useContext(Context);
+	const { store, actions } = useContext(Context);
 
-    useEffect(() => {
-        actions.getPokemons();
-    }, []);
+	useEffect(() => {
+		// Llamamos a getPokemonsRange para obtener información sobre los Pokémon en el rango 1-10 (puedes ajustar según tus necesidades)
+		actions.getPokemonsRange(1, 20);
+	}, [actions]);
 
-    return (
-        <div className="card-container">
-            {store.pokemons && Array.isArray(store.pokemons) ? (
-                store.pokemons.map((pokemon) => (
-                    <div className="col" key={pokemon.id}>
-                        <div className="pokeId" id="PokeId">
-                            {pokemon.id}
-                        </div>
-                        <div className="pokeImg" id="pokeImg">
-                            <img src={`${url_img}${pokemon.id}.png`} alt="Descripción de la imagen" />
-                        </div>
-                        <div className="pokeName" id="pokeName">{pokemon.name}</div>
-                    </div>
-                ))
-            ) : (
-                <p>No hay Pokémon disponibles.</p>
-            )}
-        </div>
-    );
+	return (
+		<div className="card-container">
+			{store.pokemons && Array.isArray(store.pokemons) ? (
+				store.pokemons.map((pokemon) => (
+					<div className="col" key={pokemon.id}>
+						<div className="pokeId" id="PokeId">
+							#{pokemon.id}
+						</div>
+						<div className="pokeImg" id="pokeImg">
+							<img src={`${url_img}${pokemon.id}.png`} alt="Descripción de la imagen" />
+						</div>
+						<div className="pokeName" id="pokeName">
+							{pokemon.name}
+						</div>
+					</div>
+				))
+			) : (
+				<p>No hay Pokémon disponibles.</p>
+			)}
+		</div>
+	);
 };
