@@ -3,14 +3,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			pokemons: [],
-			pokemon:{}
+			pokemon: {}
 		},
 		actions: {
 			getPokemons: async () => {
 				try {
 					const resp = await fetch(url);
 					const data = await resp.json();
-					setStore({ pokemons: data.results });
+					console.log("data", data)
+
+					setStore({ pokemons: data.resp });
 				} catch (error) {
 					console.log("Error al obtener los Pokémon", error);
 				}

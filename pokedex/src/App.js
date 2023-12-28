@@ -1,4 +1,5 @@
 import './App.css';
+import injectContext from "./store/appContext";
 import { CardPokemon } from './componets/Card';
 
 function App() {
@@ -11,4 +12,4 @@ function App() {
   );
 }
 
-export default App;
+export default injectContext(App);
