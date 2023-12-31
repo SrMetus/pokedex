@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
+import "../css/card.css";
+
 const url_img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/";
 
 export const CardPokemon = () => {
@@ -11,18 +13,20 @@ export const CardPokemon = () => {
 	}, [actions]);
 
 	return (
-		<div className="card-container">
+		<div className="container">
 			{store.pokemons && Array.isArray(store.pokemons) ? (
 				store.pokemons.map((pokemon) => (
 					<div className="col" key={pokemon.id}>
-						<div className="pokeId" id="PokeId">
-							#{pokemon.id}
-						</div>
-						<div className="pokeImg" id="pokeImg">
-							<img src={`${url_img}${pokemon.id}.png`} alt="Descripción de la imagen" />
-						</div>
-						<div className="pokeName" id="pokeName">
-							{pokemon.name}
+						<div className="row-4 card">
+							<div className="pokeId" id="PokeId">
+								#{pokemon.id}
+							</div>
+							<div className="pokeImg row-4" id="pokeImg">
+								<img className="imgPoke" src={`${url_img}${pokemon.id}.png`} alt={`${pokemon.name}`} />
+							</div>
+							<div className="pokeName row-4" id="pokeName">
+								{pokemon.name}
+							</div>
 						</div>
 					</div>
 				))
