@@ -1,17 +1,21 @@
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
-    gap: 20px; /* Espacio entre las tarjetas */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    color: rgb(235, 235, 235);
 }
 
 .card {
-    background-color: gray;
+    background-color: rgb(31, 31, 31);
     border: 2px solid black;
-    margin: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-.pokeID {
-    background-color: black;
+.pokeId {
+    padding: 5px;
 }
 
 img.imgPoke {

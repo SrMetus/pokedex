@@ -16,17 +16,15 @@ export const CardPokemon = () => {
 		<div className="container">
 			{store.pokemons && Array.isArray(store.pokemons) ? (
 				store.pokemons.map((pokemon) => (
-					<div className="col" key={pokemon.id}>
-						<div className="row-4 card">
-							<div className="pokeId" id="PokeId">
-								#{pokemon.id}
-							</div>
-							<div className="pokeImg row-4" id="pokeImg">
-								<img className="imgPoke" src={`${url_img}${pokemon.id}.png`} alt={`${pokemon.name}`} />
-							</div>
-							<div className="pokeName row-4" id="pokeName">
-								{pokemon.name}
-							</div>
+					<div className="card" key={pokemon.id}>
+						<div className="pokeId" id="PokeId">
+							#{pokemon.id}
+						</div>
+						<div className="pokeImg" id="pokeImg">
+							<img className="imgPoke" src={`${url_img}${pokemon.id}.png`} alt={`${pokemon.name}`} />
+						</div>
+						<div className="pokeName" id="pokeName">
+							{pokemon.name}
 						</div>
 					</div>
 				))
