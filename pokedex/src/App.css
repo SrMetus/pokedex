@@ -1,3 +1,27 @@
+:root {
+    --clr-black: #1c1c1c;
+    --clr-gray: #ececec;
+    --clr-white: #f7f7f7;
+
+    --type-normal: #a8a878;
+    --type-fire: #f08030;
+    --type-water: #6890f0;
+    --type-grass: #78c850;
+    --type-electric: #ffd430;
+    --type-ice: #98d8d8;
+    --type-fighting: #c03028;
+    --type-poision: #a040a0;
+    --type-ground: #e0c068;
+    --type-flying: #f85888;
+    --type-bug: #a8b820;
+    --type-rock: #88a038;
+    --type-ghost: #705898;
+    --type-dark: #705848;
+    --type-dragon: #705848;
+    --type-steel: #b8b8d0;
+    --type-fairy: #f0b6bc;
+}
+
 body{
     background-color: rgb(84, 84, 84);
     font-family: monospace;

@@ -7,18 +7,31 @@
 
 .card {
     background-color: rgb(31, 31, 31);
-    border: 2px solid black;
-    margin: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+
 }
 
 .pokeId {
-    padding: 5px;
+    padding: 10px;
+    font-size: 20px;
+    color: rgb(128, 126, 126, 20%);
+
+}
+
+.pokeName {
+    padding: 10px;
+    font-size: 25px;
+}
+
+.pokeImg {
+    margin-left: auto;
 }
 
 img.imgPoke {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
 }
