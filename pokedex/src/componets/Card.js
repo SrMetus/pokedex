@@ -18,13 +18,21 @@ export const CardPokemon = () => {
 				store.pokemons.map((pokemon) => (
 					<div className="card" key={pokemon.id}>
 						<div className="pokeName" id="pokeName">
-							{pokemon.name}
+							<p>{pokemon.name}</p>
 						</div>
 						<div className="pokeImg" id="pokeImg">
 							<img className="imgPoke" src={`${url_img}${pokemon.id}.png`} alt={`${pokemon.name}`} />
 						</div>
+						<div className="poke-tipo">
+							<p className=""></p>
+							<p className=""></p>
+						</div>
+						<div className="poke-stats">
+							<p className="stats"></p>
+							<p className="stats"></p>
+						</div>
 						<div className="pokeId" id="PokeId">
-							#{pokemon.id}
+							<p>#{pokemon.id}</p>
 						</div>
 					</div>
 				))
