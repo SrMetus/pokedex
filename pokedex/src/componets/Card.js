@@ -23,13 +23,13 @@ export const CardPokemon = () => {
 						<div className="pokeImg" id="pokeImg">
 							<img className="imgPoke" src={`${url_img}${pokemon.id}.png`} alt={`${pokemon.name}`} />
 						</div>
-						<div className="poke-tipo">
-							<p className=""></p>
-							<p className=""></p>
+						<div className="pokeTipo">
+							<p className="electric tipo">ELECTRIC</p>
+							<p className="flying tipo">FLY</p>
 						</div>
-						<div className="poke-stats">
-							<p className="stats"></p>
-							<p className="stats"></p>
+						<div className="pokeStats">
+							<p className="stats">{pokemon.height}M</p>
+							<p className="stats">{pokemon.weight}KG</p>
 						</div>
 						<div className="pokeId" id="PokeId">
 							<p>#{pokemon.id}</p>
