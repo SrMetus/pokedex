@@ -21,7 +21,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} catch (error) {
 					console.log("Error al obtener los Pokémon", error);
 				}
-			}
+			},
 		}
 	};
 };

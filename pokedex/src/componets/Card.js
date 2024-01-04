@@ -6,9 +6,8 @@ const url_img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprite
 
 export const CardPokemon = () => {
 	const { store, actions } = useContext(Context);
-
+	
 	useEffect(() => {
-		// Llamamos a getPokemonsRange para obtener información sobre los Pokémon en el rango 1-10 (puedes ajustar según tus necesidades)
 		actions.getPokemonsRange(1, 21);
 	}, [actions]);
 
@@ -24,8 +23,8 @@ export const CardPokemon = () => {
 							<img className="imgPoke" src={`${url_img}${pokemon.id}.png`} alt={`${pokemon.name}`} />
 						</div>
 						<div className="pokeTipo">
-							<p className="electric tipo">ELECTRIC</p>
-							<p className="flying tipo">FLY</p>
+							<p className="grass tipo">Grass</p>
+							<p className="poison tipo">Poison</p>
 						</div>
 						<div className="pokeStats">
 							<p className="stats">{pokemon.height}M</p>
